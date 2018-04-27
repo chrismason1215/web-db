@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>
+	What's your name?
+	<br>
+	<input id="text" type="text" name="name">
+    <br>
+    Get your greeting <button type="submit" onclick="getGreeting()">here</button>
+    </h1>
+
+    <h2>
+
+	<input id="myInput" type="text" name="myInput">
+
+	<button type="submit" onclick="myFunction()">Click Me!</button>
+
+    </h2>
+
+</form>
+<script type="text/javascript">
+	function getGreeting(){
+		var value = document.getElementById('text').value;
+		console.log(value);
+		window.location.href = "/greeting?name=" + value;
+	}
+</script>
+<script type="text/javascript">
+    function myFunction(){
+	var value = document.getElementById('myInput').value;
+	console.log(value);
+	window.location.href = "/dummy?sammy=" + value;
+    }
+</script>
+
+</body>
+</html>

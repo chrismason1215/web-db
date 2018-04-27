@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>
+	What's your name?
+	
+	<br> <input id="text" type="text" name="name">
+    
+	<br> Get your greeting <button type="submit" onclick="getGreeting()">here</button>
+
+	<br> <input id="myInput" type="text" name="myInput">	<button type="submit" onclick="myFunction()">Click Me!</button> 
+	<div> ---------------------------------------------------------
+    </h1>
+
+    <h2>
+	Query 1: Manager Names and Telephone Numbers <button type="submit" onclick="myFunction()">Click Here</button>
+
+	<br> Query 2: Active Lease Summary <button type="submit" onclick="myFunction()">Click Here</button>
+
+	<br> Query 3: List Student Invoices <button type="submit" onclick="myFunction()">Click Here</button>
+
+	<br> Query 4: TBD <button type="submit" onclick="myFunction()">Click Here</button>
+
+	<br> Query 5: TBD <button type="submit" onclick="myFunction()">Click Here</button>
+   </h2>
+
+    <h2>
+
+    <br> Add new student to the database: <input id ="student" type="text" name="student">
+	    <button type="submit" onclick="enterStudent()">Insert Student</button> 
+
+    <br> Add new staff member to the database: <input id="staffMember" type="text" name="staffMember">
+	    <button type="submit" onclick="enterStaffMember()">Insert Staff Member</button>
+
+    <br> Add new lease to the database: <input id="lease" type="text" name="lease">
+	    <button type="submit" onclick="enterLease()">Insert Lease</button>
+
+    <br> Update the monthly rent for a given room or apartment: <input id="rent" type="text" name="rent">
+
+    <br> Remove a student from the database: <input id="removeStudent" type="text" name="removeStudent">
+
+    </h2>
+
+</form>
+
+<script type="text/javascript">
+    function enterStudent(){
+	var value = document.getElementById('student').value;
+	console.log(value);
+	window.location.href = "/newstudent?student=" + value;
+    }
+</script>
+<script type="text/javascript">
+    function enterStaffMember(){
+	var value = document.getElementById('staffMember').value;
+	console.log(value);
+	window.location.href = "/newstaff?staffMember=" + value;
+    }
+</script>
+<script type="text/javascript">
+    function enterLease(){
+	var value = document.getElementById('lease').value;
+	console.log(value);
+	window.location.href = "/newlease?lease=" + value;
+    }
+</script>
+
+
+
+<script type="text/javascript">
+	function getGreeting(){
+		var value = document.getElementById('text').value;
+		console.log(value);
+		window.location.href = "/greeting?name=" + value;
+	}
+</script>
+<script type="text/javascript">
+    function myFunction(){
+	var value = document.getElementById('myInput').value;
+	console.log(value);
+	window.location.href = "/dummy?sammy=" + value;
+    }
+</script>
+
+</body>
+</html>
