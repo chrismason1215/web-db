@@ -17,7 +17,7 @@
     </h1>
 
     <h2>
-	Query 1: Manager Names and Telephone Numbers <button type="submit" onclick="myFunction()">Click Here</button>
+	Query 1: Manager Names and Telephone Numbers <button type="submit" onclick="query1()">Click Here</button>
 
 	<br> Query 2: Active Lease Summary <button type="submit" onclick="myFunction()">Click Here</button>
 
@@ -83,6 +83,12 @@
 	var value = document.getElementById('myInput').value;
 	console.log(value);
 	window.location.href = "/dummy?sammy=" + value;
+    }
+</script>
+
+<script type="text/javascript">
+    function query1(){
+	window.location.href = "/query1";
     }
 </script>
 

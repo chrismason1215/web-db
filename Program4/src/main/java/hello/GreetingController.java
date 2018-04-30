@@ -14,6 +14,7 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class GreetingController {
@@ -33,6 +34,8 @@ public class GreetingController {
         model.addAttribute("name", name);
         String sql = "insert into aakashrathore.people values (?)";
         jdbcTemplate.update(sql, name);
+	
+	
         return "greeting";
     }
 
@@ -71,6 +74,22 @@ public class GreetingController {
 	return "dummy";
     }
     
+    @GetMapping("/query1")
+    public String query1(Model model)
+    {
+	
+	String sql = "SELECT * from aakashrathore.people";
+	List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
+	
+	int itr = 100;
+	for (Map row : rows){
+
+		System.out.println(row.get("NAME"));
+		model.addAttribute("name" + itr, row.get("NAME"));		
+		itr++;
+	}
+        return "query1";
+    } 
 }
 
 
